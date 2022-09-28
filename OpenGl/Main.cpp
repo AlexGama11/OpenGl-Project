@@ -13,6 +13,8 @@ SDL_GLContext context{ nullptr };
 
 int main(int argc, char* argv[])
 {
+	system("Color 09");
+
 		if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS) == -1)
 		{
 			std::cout << "SDL did not initialize properly." << std::endl;

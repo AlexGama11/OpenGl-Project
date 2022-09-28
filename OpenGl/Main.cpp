@@ -7,6 +7,7 @@
 
 
 bool isAppRunning{ true };
+Uint32 num{ 0 };
 SDL_Window* window{ nullptr };
 SDL_GLContext context{ nullptr };
 
@@ -41,39 +42,53 @@ int main(int argc, char* argv[])
 
 		while (isAppRunning)
 		{
-			glClear(GL_COLOR_BUFFER_BIT);
+			num = SDL_GetTicks();
 
-			glBegin(GL_TRIANGLES);
+			if (num % 50 == 0)
+			{
+				float redValue = std::abs(std::sin(num));
 
-				glColor3f(sin(1.0f), 0.0f, 0.0f);
-				glVertex3f(0.5f, 0.5f, 0.0f);
-			
-				glColor3f(0.0f, sin(1.0f), 0.0f);
-				glVertex3f(0.75f, -0.5f, 0.0f);
-			
-				glColor3f(0.0f, 0.0f, sin(1.0f));
-				glVertex3f(0.25f, -0.5f, 0.0f);
+				std::cout << redValue << std::endl;
 
-			glEnd();
-			
-			glBegin(GL_QUADS);
 
-				glColor3f(1.0f, 0.0f, 0.0f);
-				glVertex3f(-0.25f, 0.5f, 0.0f);
-			
-				glColor3f(0.0f, 1.0f, 0.0f);
-				glVertex3f(-0.25f, -0.5f, 0.0f);
-			
-				glColor3f(0.0f, 0.0f, 1.0f);
-				glVertex3f(-0.75f, -0.5f, 0.0f);
-				
-				glColor3f(1.0f, 0.0f, 1.0f);
-				glVertex3f(-0.75f, 0.5f, 0.0f);
+						glClear(GL_COLOR_BUFFER_BIT);
 
-			glEnd();
+						glBegin(GL_TRIANGLES);
 
-			SDL_GL_SwapWindow(window);
-		}
+							glColor3f(redValue, 0.0f, 0.0f);
+							glVertex3f(0.5f, 0.5f, 0.0f);
+
+							glColor3f(0.0f, 1.0f, 0.0f);
+							glVertex3f(0.75f, -0.5f, 0.0f);
+
+							glColor3f(0.0f, 0.0f, 1.0f);
+							glVertex3f(0.25f, -0.5f, 0.0f);
+
+						glEnd();
+
+
+
+						glBegin(GL_QUADS);
+
+							glColor3f(1.0f, 0.0f, 0.0f);
+							glVertex3f(-0.25f, 0.5f, 0.0f);
+
+							glColor3f(0.0f, 1.0f, 0.0f);
+							glVertex3f(-0.25f, -0.5f, 0.0f);
+
+							glColor3f(0.0f, 0.0f, 1.0f);
+							glVertex3f(-0.75f, -0.5f, 0.0f);
+
+							glColor3f(1.0f, 0.0f, 1.0f);
+							glVertex3f(-0.75f, 0.5f, 0.0f);
+
+						glEnd();
+
+						SDL_GL_SwapWindow(window);
+
+					}
+
+				}
 	
 
 	system("pause");

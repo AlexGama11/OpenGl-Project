@@ -60,13 +60,17 @@ int main(int argc, char* argv[])
 
 				std::cout << greenValue << std::endl;
 
+				float topX = std::abs(std::cos(num * 0.5) * 2);
+
+				float squareTopX = std::abs(std::sin(num * 0.5) * 2);
+
 
 				glClear(GL_COLOR_BUFFER_BIT);
 
 				glBegin(GL_TRIANGLES);
 
 					glColor3f(redValue, 0.0f, 0.0f);
-					glVertex3f(0.5f, 0.5f, 0.0f);
+					glVertex3f(topX, 0.5f, 0.0f);
 
 					glColor3f(0.0f, greenValue, 0.0f);
 					glVertex3f(0.75f, -0.5f, 0.0f);
@@ -80,7 +84,7 @@ int main(int argc, char* argv[])
 				glBegin(GL_QUADS);
 
 					glColor3f(redValue, 0.0f, 0.0f);
-					glVertex3f(-0.25f, 0.5f, 0.0f);
+					glVertex3f(-squareTopX, 0.5f, 0.0f);
 
 					glColor3f(0.0f, greenValue, 0.0f);
 					glVertex3f(-0.25f, -0.5f, 0.0f);

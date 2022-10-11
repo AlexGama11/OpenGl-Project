@@ -72,7 +72,7 @@ int main(int argc, char* argv[])
 			switch (events.type)
 			{
 
-				//close the window
+			//close the window
 			case SDL_QUIT:
 			{
 				isAppRunning = false;
@@ -156,13 +156,9 @@ int main(int argc, char* argv[])
 				auto mousePositionX = events.motion.x;
 				auto mousePositionY = events.motion.y;
 
-				//Mouse cursor position in NDC (normalized device coordinate space
+				//Mouse cursor position in NDC (normalized device coordinate space), formula = Mouse position in screen space * Resolution * 2 - 1.
 				auto mousePositionXNDC = mousePositionX / 1280.0f * 2.0f - 1.0f;
 				auto mousePositionYNDC = mousePositionY / 720.0f * 2.0f - 1.0f;
-
-				//Mouse position divided by resolution, multiplied by two, minus 1, result between 1 and minus 1
-				//std::cout << mousePositionXNDC << ", " << mousePositionYNDC << std::endl;
-
 
 				if (num % 100 == 0)
 				{
@@ -196,8 +192,6 @@ int main(int argc, char* argv[])
 					position.x = -1.0f;
 				}
 
-				//std::cout << position.x << ", " << position.y << std::endl;
-
 				break;
 			}
 
@@ -217,7 +211,6 @@ int main(int argc, char* argv[])
 					size.increment = 0.0f;
 				}
 
-				//std::cout << wheelMotion << std::endl;
 				break;
 			}
 			}
@@ -227,34 +220,11 @@ int main(int argc, char* argv[])
 		{
 			float redValue = std::abs(std::sin(num));
 
-			/*std::cout << redValue << std::endl;*/
-
 			float blueValue = std::abs(std::sin(num * 0.5));
-
-			/*std::cout << blueValue << std::endl;*/
 
 			float greenValue = std::abs(std::cos(num));
 
-			/*std::cout << greenValue << std::endl;*/
-
-			/*float topX = std::abs(std::cos(num * 0.5) * 2);
-
-			float squareTopX = std::abs(std::sin(num * 0.5) * 2);*/
-
 			glClear(GL_COLOR_BUFFER_BIT);
-
-			/*glBegin(GL_TRIANGLES);
-
-				glColor3f(redValue, 0.0f, 0.0f);
-				glVertex3f(topX, 0.5f, 0.0f);
-
-				glColor3f(0.0f, greenValue, 0.0f);
-				glVertex3f(0.75f, -0.5f, 0.0f);
-
-				glColor3f(0.0f, 0.0f, blueValue);
-				glVertex3f(0.25f, -0.5f, 0.0f);
-
-			glEnd();*/
 
 
 			glBegin(GL_QUADS);

@@ -28,11 +28,25 @@ bool Screen::Initialize(int width, int height, int posX, int posY, std::string c
 	}
 
 	context = SDL_GL_CreateContext(window);
+	std::cout << "Major version is: " << majorVer << ", Minor Version is: " << minorVer << std::endl;
 
 	if (!context)
 	{
-		std::cout << "OpenGL context could not be created properly. The context is either invalid or not supported by your graphics card" << std::endl;
-		return 0;
+		if (!minorVer < 0)
+		{
+			for (int i = minorVer; i >= 0; i--)
+			{
+				minorVer--;
+			}
+
+		}
+
+		else
+		{
+			std::cout << "OpenGL context could not be created properly. The context is either invalid or not supported by your graphics card" << std::endl;
+			return 0;
+		}
+
 	}
 
 	return false;

@@ -4,7 +4,7 @@ workspace "OpenGL"
 
 	targetdir "%{wks.location}/bin/%{prj.name}/%{cfg.buildcfg}/%{cfg.platform}/"
 	objdir "%{wks.location}/obj/%{prj.name}/%{cfg.buildcfg}/%{cfg.platform}/"
-	buildlog "%{wks.location}/obj/%{prj.name}/%{cfg.platform}/%{cfg.buildcfg}/%{prj.name}.log"
+	buildlog "%{wks.location}/obj/%{prj.name}/%{cfg.buildcfg}/%{cfg.platform}/%{prj.name}.log"
 
 	largeaddressaware "on"
 	editandcontinue "off"

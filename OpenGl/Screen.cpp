@@ -41,7 +41,7 @@ bool Screen::Initialize(int width, int height, int posX, int posY, std::string c
 		do 
 		{
 			std::cout << "OpenGL context could not be created properly. The context is either invalid or not supported by your graphics card" << std::endl;
-			std::cout << "Trying one version down" << std::endl;
+			std::cout << "Trying one version down..." << std::endl;
 
 			VersionDecrement(minorVer);
 
@@ -81,6 +81,6 @@ void Screen::Shutdown()
 
 int Screen::VersionDecrement(int& Version)
 {
-		Version--;
-		return Version;
+	Version--;
+	return Version;
 }

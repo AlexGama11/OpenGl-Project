@@ -1,5 +1,11 @@
 #include "Screen.h"
 
+Screen* Screen::Instance()
+{
+	static Screen* screen = new Screen;
+	return screen;
+}
+
 bool Screen::Initialize(int width, int height, int posX, int posY, std::string contextVersions)
 {
 
@@ -32,21 +38,21 @@ bool Screen::Initialize(int width, int height, int posX, int posY, std::string c
 
 	if (!context)
 	{
-		if (!minorVer < 0)
-		{
-			for (int i = minorVer; i >= 0; i--)
-			{
-				minorVer--;
-			}
-
-		}
-
-		else
+		do 
 		{
 			std::cout << "OpenGL context could not be created properly. The context is either invalid or not supported by your graphics card" << std::endl;
-			return 0;
+			std::cout << "Trying one version down" << std::endl;
+
+			VersionDecrement(minorVer);
+
+			SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, minorVer);
+
+			context = SDL_GL_CreateContext(window);
+			std::cout << "Major version is: " << majorVer << ", Minor Version is: " << minorVer << std::endl;
 		}
 
+		while (!context);
+		
 	}
 
 	return false;
@@ -71,4 +77,10 @@ void Screen::Shutdown()
 	SDL_GL_DeleteContext(context);
 	SDL_DestroyWindow(window);
 	SDL_Quit;
+}
+
+int Screen::VersionDecrement(int& Version)
+{
+		Version--;
+		return Version;
 }

@@ -8,6 +8,8 @@ class Input
 
 public:
 
+	static Input* Instance();
+
 	void Update();
 
 	float GetMousePositionX();
@@ -20,6 +22,10 @@ public:
 	bool GetQuit();
 
 private:
+
+	Input() {};
+	Input(const Input&);
+	Input& operator = (const Input&);
 
 	struct Vec3
 	{

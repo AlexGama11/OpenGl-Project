@@ -11,6 +11,8 @@ class Screen
 
 public:
 
+	static Screen* Instance();
+
 	/**
 	Initialize the screen, by inputting width, height, X position, Y position, and the string for the context version written, for example as "4.6".
 	To make the screen centered, set the X position as a quarter of the screen width and the Y position as a quarter of the screen height.
@@ -23,7 +25,14 @@ public:
 
 	void Shutdown();
 
+	int VersionDecrement(int& Version);
+
 private:
+
+	Screen() {};
+	Screen(const Screen&);
+	Screen& operator = (const Screen&);
+
 
 	SDL_Window* window{ nullptr };
 	SDL_GLContext context{ nullptr };
@@ -33,6 +42,8 @@ private:
 	
 	int majorVer;
 	int minorVer;
+
+	bool minorVersionLoop{ true };
 
 };
 

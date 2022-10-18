@@ -1,5 +1,11 @@
 #include "Input.h"
 
+Input* Input::Instance()
+{
+	static Input* input = new Input;
+	return input;
+}
+
 void Input::Update()
 {
 

@@ -31,9 +31,6 @@ workspace "OpenGl Project"
 		"{COPY} ../DevLib/SDL/dlls/**.dll ../Builds//bin//%{cfg.buildcfg}//"
 	}
 
-	
-	
-
 	platforms {
 		"x86",
 	}

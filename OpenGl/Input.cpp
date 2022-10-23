@@ -106,6 +106,8 @@ void Input::Update()
 			mousePosition.x = mousePositionXNDC;
 			mousePosition.y = -mousePositionYNDC;
 
+			//std::cout << "Mouse Position on the X axis is: " << mousePosition.x << "; Mouse Position on the Y axis is: " << mousePosition.y << std::endl;
+
 			if (mousePosition.x > 1.0f)
 			{
 				mousePosition.x = 1.0f;

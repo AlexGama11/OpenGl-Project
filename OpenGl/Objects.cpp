@@ -33,6 +33,11 @@ void Objects::Draw()
 	glVertex3f(GetX(3), GetY(3), GetZ(3));
 
 	glEnd();
+
+	/*for (int i = 0; i < 3; i++)
+	{
+		std::cout << "X value for corner" << i << ": " << GetX(i) << ", Y value for corner" << i << ": " << GetY(i) << ", Z value for corner" << i << ": " << GetZ(i) << std::endl;
+	}*/
 }
 
 float Objects::GetX(int corner)
@@ -40,19 +45,19 @@ float Objects::GetX(int corner)
 	switch (Corners(corner))
 	{
 	case Corners::TopRight:
-		return Input::Instance()->GetMousePositionX() + Input::Instance()->GetMouseWheel();
+		return std::sin(Input::Instance()->GetMousePositionX() + Input::Instance()->GetMouseWheel());
 		break;
 
 	case Corners::BottomRight:
-		return Input::Instance()->GetMousePositionX() + Input::Instance()->GetMouseWheel();
+		return std::sin(Input::Instance()->GetMousePositionX() + Input::Instance()->GetMouseWheel());
 		break;
 
 	case Corners::BottomLeft:
-		return Input::Instance()->GetMousePositionX() - Input::Instance()->GetMouseWheel();
+		return std::sin(Input::Instance()->GetMousePositionX() - Input::Instance()->GetMouseWheel());
 		break;
 
 	case Corners::TopLeft:
-		return Input::Instance()->GetMousePositionX() - Input::Instance()->GetMouseWheel();
+		return std::sin(Input::Instance()->GetMousePositionX() - Input::Instance()->GetMouseWheel());
 		break;
 
 	default:
@@ -66,19 +71,19 @@ float Objects::GetY(int corner)
 	switch (Corners(corner))
 	{
 	case Corners::TopRight:
-		return Input::Instance()->GetMousePositionY() + Input::Instance()->GetMouseWheel();
+		return std::sin(Input::Instance()->GetMousePositionY() + Input::Instance()->GetMouseWheel());
 		break;
 
 	case Corners::BottomRight:
-		return Input::Instance()->GetMousePositionY() - Input::Instance()->GetMouseWheel();
+		return std::sin(Input::Instance()->GetMousePositionY() - Input::Instance()->GetMouseWheel());
 		break;
 
 	case Corners::BottomLeft:
-		return Input::Instance()->GetMousePositionY() - Input::Instance()->GetMouseWheel();
+		return std::sin(Input::Instance()->GetMousePositionY() - Input::Instance()->GetMouseWheel());
 		break;
 
 	case Corners::TopLeft:
-		return Input::Instance()->GetMousePositionY() + Input::Instance()->GetMouseWheel();
+		return std::sin(Input::Instance()->GetMousePositionY() + Input::Instance()->GetMouseWheel());
 		break;
 
 	default:

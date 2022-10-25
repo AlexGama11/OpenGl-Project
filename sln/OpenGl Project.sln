@@ -5,14 +5,14 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenGL Project", "OpenGL Pr
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Win32 = Debug|Win32
-		Release|Win32 = Release|Win32
+		Debug|Win-x86 = Debug|Win-x86
+		Release|Win-x86 = Release|Win-x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A19BF308-8D69-E70E-76FD-5735626AC373}.Debug|Win32.ActiveCfg = Debug|Win32
-		{A19BF308-8D69-E70E-76FD-5735626AC373}.Debug|Win32.Build.0 = Debug|Win32
-		{A19BF308-8D69-E70E-76FD-5735626AC373}.Release|Win32.ActiveCfg = Release|Win32
-		{A19BF308-8D69-E70E-76FD-5735626AC373}.Release|Win32.Build.0 = Release|Win32
+		{A19BF308-8D69-E70E-76FD-5735626AC373}.Debug|Win-x86.ActiveCfg = Debug Win-x86|Win32
+		{A19BF308-8D69-E70E-76FD-5735626AC373}.Debug|Win-x86.Build.0 = Debug Win-x86|Win32
+		{A19BF308-8D69-E70E-76FD-5735626AC373}.Release|Win-x86.ActiveCfg = Release Win-x86|Win32
+		{A19BF308-8D69-E70E-76FD-5735626AC373}.Release|Win-x86.Build.0 = Release Win-x86|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

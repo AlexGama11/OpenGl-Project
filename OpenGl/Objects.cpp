@@ -10,15 +10,11 @@ void Objects::Draw()
 
 	float greenValue = std::abs(std::cos(num));
 
-	//std::cout << "Red Value: " << redValue << ", Blue Value: " << blueValue << ", Green Value: " << greenValue << std::endl;
-
 	glBegin(GL_QUADS);
 
 	//top right corner
 	glColor3f(redValue, 0.0f, 0.0f);
 	glVertex3f(GetX(0), GetY(0), GetZ(0));
-
-	//std::cout << "X Value: " << GetX(0) << ", Y Value: " << GetY(0) << ", Z Value: " << GetZ(0) << std::endl;
 
 	//bottom right corner
 	glColor3f(0.0f, greenValue, 0.0f);
@@ -34,10 +30,13 @@ void Objects::Draw()
 
 	glEnd();
 
-	/*for (int i = 0; i < 3; i++)
+	static bool isErrorChecked = false;
+
+	if (!isErrorChecked)
 	{
-		std::cout << "X value for corner" << i << ": " << GetX(i) << ", Y value for corner" << i << ": " << GetY(i) << ", Z value for corner" << i << ": " << GetZ(i) << std::endl;
-	}*/
+		Utility::CheckGLError();
+		isErrorChecked = true;
+	}
 }
 
 float Objects::GetX(int corner)
@@ -61,7 +60,7 @@ float Objects::GetX(int corner)
 		break;
 
 	default:
-		std::cout << "Error in setting corner coordinates" << std::endl;
+		Utility::Log("Error in setting corner coordinates");
 		return 0.0f;
 	}
 }
@@ -87,7 +86,7 @@ float Objects::GetY(int corner)
 		break;
 
 	default:
-		std::cout << "Error in setting corner coordinates" << std::endl;
+		Utility::Log("Error in setting corner coordinates");
 		return 0.0f;
 	}
 }
@@ -113,7 +112,7 @@ float Objects::GetZ(int corner)
 		break;
 
 	default:
-		std::cout << "Error in setting corner coordinates" << std::endl;
+		Utility::Log("Error in setting corner coordinates");
 		return 0.0f;
 	};
 }

@@ -25,14 +25,14 @@ void Input::Update()
 		case SDL_KEYDOWN:
 		{
 			key = events.key.keysym.sym;
-			//std::cout << key << std::endl;
+			//Utility::Log(key);
 			break;
 		}
 
 		case SDL_KEYUP:
 		{
 			key = events.key.keysym.sym;
-			//std::cout << key << std::endl;
+			//Utility::Log(key);
 			break;
 		}
 
@@ -42,19 +42,19 @@ void Input::Update()
 			{
 			case SDL_BUTTON_LEFT:
 			{
-				std::cout << "Left Mouse Button Clicked" << std::endl;
+				//Utility::Log("Left Mouse Button Clicked");
 				break;
 			}
 
 			case SDL_BUTTON_RIGHT:
 			{
-				std::cout << "Right Mouse Button Clicked" << std::endl;
+				//Utility::Log("Right Mouse Button Clicked");
 				break;
 			}
 
 			case SDL_BUTTON_MIDDLE:
 			{
-				std::cout << "Middle Mouse Button Clicked" << std::endl;
+				//Utility::Log("Middle Mouse Button Clicked");
 				break;
 			}
 			break;
@@ -69,19 +69,19 @@ void Input::Update()
 			{
 			case SDL_BUTTON_LEFT:
 			{
-				std::cout << "Left Mouse Button Released" << std::endl;
+				//Utility::Log("Left Mouse Button Released");
 				break;
 			}
 
 			case SDL_BUTTON_RIGHT:
 			{
-				std::cout << "Right Mouse Button Released" << std::endl;
+				//Utility::Log("Right Mouse Button Released");
 				break;
 			}
 
 			case SDL_BUTTON_MIDDLE:
 			{
-				std::cout << "Middle Mouse Button Released" << std::endl;
+				//Utility::Log("Middle Mouse Button Released");
 				break;
 			}
 			break;

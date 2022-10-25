@@ -10,14 +10,16 @@ int main(int argc, char* argv[])
 {
 	Objects object;
 
-	system("Color 09");
+	Utility::Initialize();
 
-	Screen::Instance()->Initialize(1280, 720, 320, 180, "4.6");
+	Screen::Instance()->Initialize(1280, 720, 320, 180, "4.6", false);
 
 	while (isAppRunning)
 	{
 
 		Input::Instance()->Update();
+
+		Screen::Instance()->ClearColor(41, 37, 38, 173.4);
 
 		Screen::Instance()->ClearBuffer();
 

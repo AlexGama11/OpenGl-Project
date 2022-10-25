@@ -1,10 +1,8 @@
 #pragma once
-#include <Windows.h>
-#include <gl/GL.h>
-
-#include <iostream>
 #include <math.h>
+#include "gl.h"
 #include "Input.h"
+#include "Utility.h"
 
 
 class Objects

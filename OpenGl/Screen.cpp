@@ -57,6 +57,7 @@ bool Screen::Initialize(int width, int height, int posX, int posY, std::string c
 
 			if (minorVer == 0 && majorVer >= 0)
 			{
+				//Loops through major version
 				Utility::Log("Trying one major version down!", Utility::Severity::Warning);
 
 				VersionDecrement(majorVer);
@@ -72,6 +73,7 @@ bool Screen::Initialize(int width, int height, int posX, int posY, std::string c
 
 			else
 			{
+				//Loops through minor version
 				SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, minorVer);
 
 				context = SDL_GL_CreateContext(window);

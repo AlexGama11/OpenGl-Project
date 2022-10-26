@@ -24,10 +24,23 @@ void Input::Update()
 
 		case SDL_KEYDOWN:
 		{
-			key = events.key.keysym.sym;
-			//Utility::Log(key);
+			switch (events.key.keysym.sym) {
+				case SDLK_ESCAPE:
+				{
+					quit = true;
+					break;
+				}
+
+				default:
+				{
+					Utility::Log("Key was Pressed!");
+					break;
+				}
+			}
+			
 			break;
 		}
+
 
 		case SDL_KEYUP:
 		{

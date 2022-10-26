@@ -1,5 +1,5 @@
 workspace "OpenGl Project"
-	location ".\\sln\\"
+	location "./sln/"
 
 	targetdir "./Build/bin/%{cfg.buildcfg}/%{cfg.platform}/"
 	objdir "./Build/obj/%{cfg.buildcfg}/%{cfg.platform}/"

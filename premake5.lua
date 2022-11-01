@@ -78,6 +78,7 @@ workspace "OpenGl Project"
 			"./**.lua",
 			"./**.gitignore",
 			"./**.gitattributes",
+			"./**.txt",
 		}
 
 		

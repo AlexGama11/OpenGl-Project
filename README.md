@@ -1,4 +1,4 @@
-﻿## My Game Engine!
+﻿## My OpenGL Project!
 
 Making an OpenGL program for class, more info soon!
 
@@ -36,4 +36,4 @@ In order to use the code, click on generate.bat to make your solution. It is set
 
 ![Swords](https://raw.githubusercontent.com/AlexGama11/Game-Engine/master/assets/Shirou.png)
 
-Hope you like my game! Feel Free to give any suggestions!.
+Hope you like my project! Feel Free to give any suggestions!.

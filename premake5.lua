@@ -1,5 +1,6 @@
 workspace "OpenGl Project"
-	location "./sln/"
+	location "./solution/"
+	startproject "OpenGl Project"
 
 	targetdir "./Build/bin/%{cfg.buildcfg}/%{cfg.platform}/"
 	objdir "./Build/obj/%{cfg.buildcfg}/%{cfg.platform}/"
@@ -20,7 +21,7 @@ workspace "OpenGl Project"
 	}
 
 	platforms {
-		"Win-x86",
+		"Win32",
 	}
 
 	configurations {
@@ -29,7 +30,7 @@ workspace "OpenGl Project"
 	}
 
 	--x86
-	filter "platforms:Win-x86"
+	filter "platforms:Win32"
 		architecture "x86"
 	--end
 
@@ -48,15 +49,15 @@ workspace "OpenGl Project"
 	project "OpenGL Project"
 		targetname "OpenGl Project"
 		language "c++"
-		cppdialect "c++17"
+		cppdialect "c++20"
 		warnings "off"
 
 		kind "consoleapp"
 
-		filter "platforms:Win-x86"
+		filter "platforms:Win32"
 			syslibdirs {
-			".\\DevLib\\SDL\\lib\\",
-			".\\DevLib\\SDL\\dlls\\",
+			"./DevLib/SDL/lib/",
+			"./DevLib/SDL/dlls/",
 			}
 		filter {}
 
@@ -67,19 +68,23 @@ workspace "OpenGl Project"
 		}
 		
 		includedirs {
-			".\\DevLib\\SDL\\include\\",
-			".\\OpenGL\\",
+			"./DevLib/SDL/include/",
+			"./OpenGL/",
 		}
 
 		files {
-			".\\OpenGL\\**",
+			"./OpenGL/**",
+			"./**.md",
+			"./**.lua",
+			"./**.gitignore",
+			"./**.gitattributes",
 		}
 
 		
 		vpaths {
-   			["Headers"] = "**.h",
-   			["Sources"] = "**.c, **.cpp",
-   			["Docs"] = "**.txt"
+   			["Headers"] = {"**.h", "**.hpp"},
+   			["Sources"] = {"**.c", "**.cpp"},
+   			["Docs"] = {"**.txt", "**.md", "**.lua", "**.gitignore", "**.gitattributes"}
 		}
 
 	postbuildcommands{ 

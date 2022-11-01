@@ -16,10 +16,9 @@ int main(int argc, char* argv[])
 
 	while (isAppRunning)
 	{
-
 		Input::Instance()->Update();
 
-		Screen::Instance()->ClearColor(41, 37, 38, 173.4);
+		Screen::Instance()->ClearColor(10, 24, 94, 255);
 
 		Screen::Instance()->ClearBuffer();
 

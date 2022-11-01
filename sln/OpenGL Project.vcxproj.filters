@@ -18,13 +18,13 @@
     <ClInclude Include="..\OpenGL\Screen.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="..\OpenGL\Utility.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
     <ClInclude Include="..\OpenGL\gl.h">
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="..\OpenGL\khrplatform.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\OpenGL\Utility.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>
@@ -41,10 +41,10 @@
     <ClCompile Include="..\OpenGL\Screen.cpp">
       <Filter>OpenGL</Filter>
     </ClCompile>
-    <ClCompile Include="..\OpenGL\gl.c">
+    <ClCompile Include="..\OpenGL\Utility.cpp">
       <Filter>OpenGL</Filter>
     </ClCompile>
-    <ClCompile Include="..\OpenGL\Utility.cpp">
+    <ClCompile Include="..\OpenGL\gl.c">
       <Filter>OpenGL</Filter>
     </ClCompile>
   </ItemGroup>

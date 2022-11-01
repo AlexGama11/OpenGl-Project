@@ -117,17 +117,17 @@
     <ClInclude Include="..\OpenGL\Input.h" />
     <ClInclude Include="..\OpenGL\Objects.h" />
     <ClInclude Include="..\OpenGL\Screen.h" />
+    <ClInclude Include="..\OpenGL\Utility.h" />
     <ClInclude Include="..\OpenGL\gl.h" />
     <ClInclude Include="..\OpenGL\khrplatform.h" />
-    <ClInclude Include="..\OpenGL\Utility.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\OpenGL\Input.cpp" />
     <ClCompile Include="..\OpenGL\Main.cpp" />
     <ClCompile Include="..\OpenGL\Objects.cpp" />
     <ClCompile Include="..\OpenGL\Screen.cpp" />
-    <ClCompile Include="..\OpenGL\gl.c" />
     <ClCompile Include="..\OpenGL\Utility.cpp" />
+    <ClCompile Include="..\OpenGL\gl.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

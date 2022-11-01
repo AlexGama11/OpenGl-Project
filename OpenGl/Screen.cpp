@@ -51,14 +51,36 @@ bool Screen::Initialize(int width, int height, int posX, int posY, std::string c
 		do
 		{
 			Utility::Log("OpenGL context could not be created properly. The context is either invalid or not supported by your graphics card!", Utility::Severity::Warning);
-			Utility::Log("Trying one version down!", Utility::Severity::Warning);
+			Utility::Log("Trying one minor version down!", Utility::Severity::Warning);
 
 			VersionDecrement(minorVer);
 
-			SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, minorVer);
+			if (minorVer == 0 && majorVer >= 0)
+			{
+				//Loops through major version
+				Utility::Log("Trying one major version down!", Utility::Severity::Warning);
 
-			context = SDL_GL_CreateContext(window);
-			Utility::DisplayOpenGLVersion(majorVer, minorVer);
+				VersionDecrement(majorVer);
+
+				minorVer = 9;
+
+				SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, majorVer);
+				SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, minorVer);
+
+				context = SDL_GL_CreateContext(window);
+				Utility::DisplayOpenGLVersion(majorVer, minorVer);
+			}
+
+			else
+			{
+				//Loops through minor version
+				SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, minorVer);
+
+				context = SDL_GL_CreateContext(window);
+				Utility::DisplayOpenGLVersion(majorVer, minorVer);
+			}
+
+			
 		}
 
 		while (!context);
@@ -70,7 +92,8 @@ bool Screen::Initialize(int width, int height, int posX, int posY, std::string c
 		return false;
 	}
 
-	Utility::Log("Screen Initialized Successfully!", Utility::Severity::Success);
+	Utility::Log("Screen Initialized Successfully! Displaying Graphics Card Information...", Utility::Severity::Success);
+	Utility::DisplayGraphicsProfile();
 	return true;
 }
 

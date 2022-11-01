@@ -117,6 +117,7 @@
     <ClInclude Include="..\OpenGL\Input.h" />
     <ClInclude Include="..\OpenGL\Objects.h" />
     <ClInclude Include="..\OpenGL\Screen.h" />
+    <ClInclude Include="..\OpenGL\Shader.h" />
     <ClInclude Include="..\OpenGL\Utility.h" />
     <ClInclude Include="..\OpenGL\gl.h" />
     <ClInclude Include="..\OpenGL\khrplatform.h" />
@@ -126,12 +127,15 @@
     <ClCompile Include="..\OpenGL\Main.cpp" />
     <ClCompile Include="..\OpenGL\Objects.cpp" />
     <ClCompile Include="..\OpenGL\Screen.cpp" />
+    <ClCompile Include="..\OpenGL\Shader.cpp" />
     <ClCompile Include="..\OpenGL\Utility.cpp" />
     <ClCompile Include="..\OpenGL\gl.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.gitattributes" />
     <None Include="..\.gitignore" />
+    <None Include="..\OpenGL\MainShader.frag" />
+    <None Include="..\OpenGL\MainShader.vert" />
     <None Include="..\README.md" />
     <None Include="..\premake5.lua" />
   </ItemGroup>

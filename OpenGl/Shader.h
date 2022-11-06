@@ -9,7 +9,7 @@ public:
 
 	static Shader* Instance();
 
-	bool CreateShaderProgram();
+	bool Initialize();
 
 	void CreateShaders();
 

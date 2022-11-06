@@ -6,7 +6,7 @@ Shader* Shader::Instance()
 	return shader;
 }
 
-bool Shader::CreateShaderProgram()
+bool Shader::Initialize()
 {
 	shaderProgramID = glCreateProgram();
 
@@ -16,24 +16,23 @@ bool Shader::CreateShaderProgram()
 		return false;
 	}
 
-	return true;
-}
-
-void Shader::CreateShaders()
-{
 	vertexShaderID = glCreateShader(GL_VERTEX_SHADER);
 
-		if (vertexShaderID == 0)
-		{
-			Utility::Log("Error! Vertex Shader could not be created!", Utility::Severity::Failure);
-		}
+	if (vertexShaderID == 0)
+	{
+		Utility::Log("Error! Vertex Shader could not be created!", Utility::Severity::Failure);
+		return false;
+	}
 
 	fragmentShaderID = glCreateShader(GL_FRAGMENT_SHADER);
 
-		if (fragmentShaderID == 0)
-		{
-			Utility::Log("Error! Fragment Shader could not be created!", Utility::Severity::Failure);
-		}
+	if (fragmentShaderID == 0)
+	{
+		Utility::Log("Error! Fragment Shader could not be created!", Utility::Severity::Failure);
+		return false;
+	}
+
+	return true;
 }
 
 void Shader::CompileShaders()

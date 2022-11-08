@@ -4,60 +4,63 @@
     <Filter Include="Docs">
       <UniqueIdentifier>{AE3E847C-9A75-850D-4362-6B102F78010F}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Headers">
-      <UniqueIdentifier>{C196CD9C-2D76-4C38-368E-D70EA2ECB299}</UniqueIdentifier>
+    <Filter Include="OpenGL">
+      <UniqueIdentifier>{8A864AC8-7628-759E-5FE3-88F24B24FCEE}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Shaders">
-      <UniqueIdentifier>{EFAC8DF2-5B8C-0C8E-64A4-9764D00273EF}</UniqueIdentifier>
+    <Filter Include="OpenGL\Header Files">
+      <UniqueIdentifier>{153CA4C9-819D-81D7-0A0B-C889766BB896}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Sources">
-      <UniqueIdentifier>{89565304-F535-D29F-FE4D-5D766AAC3801}</UniqueIdentifier>
+    <Filter Include="OpenGL\Shader Files">
+      <UniqueIdentifier>{035F2F74-6FC0-0C82-F82D-5334648E4341}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenGL\Source Files">
+      <UniqueIdentifier>{DD182108-497A-FE15-D2E7-44C83E4835D5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\OpenGL\Input.h">
-      <Filter>Headers</Filter>
+    <ClInclude Include="..\OpenGL\Header Files\Input.h">
+      <Filter>OpenGL\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\OpenGL\Objects.h">
-      <Filter>Headers</Filter>
+    <ClInclude Include="..\OpenGL\Header Files\Objects.h">
+      <Filter>OpenGL\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\OpenGL\Screen.h">
-      <Filter>Headers</Filter>
+    <ClInclude Include="..\OpenGL\Header Files\Screen.h">
+      <Filter>OpenGL\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\OpenGL\Shader.h">
-      <Filter>Headers</Filter>
+    <ClInclude Include="..\OpenGL\Header Files\Shader.h">
+      <Filter>OpenGL\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\OpenGL\Utility.h">
-      <Filter>Headers</Filter>
+    <ClInclude Include="..\OpenGL\Header Files\Utility.h">
+      <Filter>OpenGL\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\OpenGL\gl.h">
-      <Filter>Headers</Filter>
+    <ClInclude Include="..\OpenGL\Header Files\gl.h">
+      <Filter>OpenGL\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\OpenGL\khrplatform.h">
-      <Filter>Headers</Filter>
+    <ClInclude Include="..\OpenGL\Header Files\khrplatform.h">
+      <Filter>OpenGL\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\OpenGL\Input.cpp">
-      <Filter>Sources</Filter>
+    <ClCompile Include="..\OpenGL\Source Files\Input.cpp">
+      <Filter>OpenGL\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\OpenGL\Main.cpp">
-      <Filter>Sources</Filter>
+    <ClCompile Include="..\OpenGL\Source Files\Main.cpp">
+      <Filter>OpenGL\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\OpenGL\Objects.cpp">
-      <Filter>Sources</Filter>
+    <ClCompile Include="..\OpenGL\Source Files\Objects.cpp">
+      <Filter>OpenGL\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\OpenGL\Screen.cpp">
-      <Filter>Sources</Filter>
+    <ClCompile Include="..\OpenGL\Source Files\Screen.cpp">
+      <Filter>OpenGL\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\OpenGL\Shader.cpp">
-      <Filter>Sources</Filter>
+    <ClCompile Include="..\OpenGL\Source Files\Shader.cpp">
+      <Filter>OpenGL\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\OpenGL\Utility.cpp">
-      <Filter>Sources</Filter>
+    <ClCompile Include="..\OpenGL\Source Files\Utility.cpp">
+      <Filter>OpenGL\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\OpenGL\gl.c">
-      <Filter>Sources</Filter>
+    <ClCompile Include="..\OpenGL\Source Files\gl.c">
+      <Filter>OpenGL\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -67,11 +70,11 @@
     <None Include="..\.gitignore">
       <Filter>Docs</Filter>
     </None>
-    <None Include="..\OpenGL\MainShader.frag">
-      <Filter>Shaders</Filter>
+    <None Include="..\OpenGL\Shader Files\MainShader.frag">
+      <Filter>OpenGL\Shader Files</Filter>
     </None>
-    <None Include="..\OpenGL\MainShader.vert">
-      <Filter>Shaders</Filter>
+    <None Include="..\OpenGL\Shader Files\MainShader.vert">
+      <Filter>OpenGL\Shader Files</Filter>
     </None>
     <None Include="..\README.md">
       <Filter>Docs</Filter>

@@ -83,10 +83,10 @@ workspace "OpenGl Project"
 
 		
 		vpaths {
-   			["Headers"] = {"**.h", "**.hpp"},
-   			["Sources"] = {"**.c", "**.cpp"},
+   			--["Headers"] = {"**.h", "**.hpp"},
+   			--["Sources"] = {"**.c", "**.cpp"},
    			["Docs"] = {"**.txt", "**.md", "**.lua", "**.gitignore", "**.gitattributes"},
-			["Shaders"] = {"**.frag", "**.vert"}
+			--["Shaders"] = {"**.frag", "**.vert"}
 		}
 
 	postbuildcommands{ 

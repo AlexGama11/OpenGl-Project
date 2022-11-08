@@ -114,28 +114,28 @@
     </BuildLog>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\OpenGL\Input.h" />
-    <ClInclude Include="..\OpenGL\Objects.h" />
-    <ClInclude Include="..\OpenGL\Screen.h" />
-    <ClInclude Include="..\OpenGL\Shader.h" />
-    <ClInclude Include="..\OpenGL\Utility.h" />
-    <ClInclude Include="..\OpenGL\gl.h" />
-    <ClInclude Include="..\OpenGL\khrplatform.h" />
+    <ClInclude Include="..\OpenGL\Header Files\Input.h" />
+    <ClInclude Include="..\OpenGL\Header Files\Objects.h" />
+    <ClInclude Include="..\OpenGL\Header Files\Screen.h" />
+    <ClInclude Include="..\OpenGL\Header Files\Shader.h" />
+    <ClInclude Include="..\OpenGL\Header Files\Utility.h" />
+    <ClInclude Include="..\OpenGL\Header Files\gl.h" />
+    <ClInclude Include="..\OpenGL\Header Files\khrplatform.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\OpenGL\Input.cpp" />
-    <ClCompile Include="..\OpenGL\Main.cpp" />
-    <ClCompile Include="..\OpenGL\Objects.cpp" />
-    <ClCompile Include="..\OpenGL\Screen.cpp" />
-    <ClCompile Include="..\OpenGL\Shader.cpp" />
-    <ClCompile Include="..\OpenGL\Utility.cpp" />
-    <ClCompile Include="..\OpenGL\gl.c" />
+    <ClCompile Include="..\OpenGL\Source Files\Input.cpp" />
+    <ClCompile Include="..\OpenGL\Source Files\Main.cpp" />
+    <ClCompile Include="..\OpenGL\Source Files\Objects.cpp" />
+    <ClCompile Include="..\OpenGL\Source Files\Screen.cpp" />
+    <ClCompile Include="..\OpenGL\Source Files\Shader.cpp" />
+    <ClCompile Include="..\OpenGL\Source Files\Utility.cpp" />
+    <ClCompile Include="..\OpenGL\Source Files\gl.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.gitattributes" />
     <None Include="..\.gitignore" />
-    <None Include="..\OpenGL\MainShader.frag" />
-    <None Include="..\OpenGL\MainShader.vert" />
+    <None Include="..\OpenGL\Shader Files\MainShader.frag" />
+    <None Include="..\OpenGL\Shader Files\MainShader.vert" />
     <None Include="..\README.md" />
     <None Include="..\premake5.lua" />
   </ItemGroup>

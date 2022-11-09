@@ -1,7 +1,6 @@
 #pragma once
 #include <fstream>
 #include "Utility.h"
-#include "gl.h"
 
 class Shader
 {

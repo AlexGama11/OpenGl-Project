@@ -76,8 +76,7 @@ void Utility::CheckGLError()
 		Log("Old function fixed code isn't working, and has caused the stack to underflow!", Utility::Severity::Failure);
 	}
 
-	else if (errorValue == GL_STACK_OVERFLOW
-		)
+	else if (errorValue == GL_STACK_OVERFLOW)
 	{
 		Log("Old function fixed code isn't working, and has caused the stack to overflow!", Utility::Severity::Failure);
 	}

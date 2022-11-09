@@ -1,5 +1,6 @@
 #pragma once
 #include <SDL.h>
+#include <SDL_image.h>
 #include "Utility.h"
 #include "gl.h"
 
@@ -35,6 +36,7 @@ private:
 
 
 	SDL_Window* window{ nullptr };
+	SDL_Surface* icon{ nullptr };
 	SDL_GLContext context{ nullptr };
 
 	std::string majorContext;

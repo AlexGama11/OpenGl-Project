@@ -50,7 +50,7 @@ workspace "OpenGl Project"
 		targetname "OpenGl Project"
 		language "c++"
 		cppdialect "c++20"
-		warnings "off"
+		warnings "extra"
 
 		kind "consoleapp"
 
@@ -64,6 +64,7 @@ workspace "OpenGl Project"
 		links {
 			"SDL2",
 			"SDL2main",
+			"SDL2_image",
 			"opengl32",
 		}
 		
@@ -81,11 +82,16 @@ workspace "OpenGl Project"
 			"./**.txt",
 		}
 
+		removefiles {
+			"./OpenGl/**.TMP",
+			"./Build/**"
+		}
+
 		
 		vpaths {
    			--["Headers"] = {"**.h", "**.hpp"},
    			--["Sources"] = {"**.c", "**.cpp"},
-   			["Docs"] = {"**.txt", "**.md", "**.lua", "**.gitignore", "**.gitattributes"},
+   			["Docs"] = {"**.txt", "**.md", "**.lua", "**.gitignore", "**.gitattributes"}
 			--["Shaders"] = {"**.frag", "**.vert"}
 		}
 

@@ -17,13 +17,13 @@ int main(int argc, char* argv[])
 
 	Shader::Initialize();
 
-	shader.Create("../OpenGl/Shader Files/MainShader.vert", "../OpenGl/Shader Files/MainShader.frag");
+	shader.Create("../OpenGl/Shader Files/Shader.vert", "../OpenGl/Shader Files/Shader.frag");
 
 	while (isAppRunning)
 	{
 		Input::Instance()->Update();
 
-		Screen::Instance()->ClearColor(10, 24, 94, 255);
+		Screen::Instance()->ClearColor(37, 41, 138, 255);
 
 		Screen::Instance()->ClearBuffer();
 

@@ -42,20 +42,24 @@ bool Screen::Initialize(int width, int height, int posX, int posY, std::string c
 		return false;
 	}
 
+	icon = IMG_Load("../Assets/Icon/ShirouIcon.png");
+
+	SDL_SetWindowIcon(window, icon);
+
 	context = SDL_GL_CreateContext(window);
 	Utility::DisplayOpenGLVersion(majorVer, minorVer);
 	
 
 	if (!context)
 	{
-		do
+		while (!context)
 		{
 			Utility::Log("OpenGL context could not be created properly. The context is either invalid or not supported by your graphics card!", Utility::Severity::Warning);
 			Utility::Log("Trying one minor version down!", Utility::Severity::Warning);
 
 			VersionDecrement(minorVer);
 
-			if (minorVer == 0 && majorVer >= 0)
+			if (minorVer == 0 && majorVer >= 2)
 			{
 				//Loops through major version
 				Utility::Log("Trying one major version down!", Utility::Severity::Warning);
@@ -71,7 +75,7 @@ bool Screen::Initialize(int width, int height, int posX, int posY, std::string c
 				Utility::DisplayOpenGLVersion(majorVer, minorVer);
 			}
 
-			else
+			else if (minorVer > 0)
 			{
 				//Loops through minor version
 				SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, minorVer);
@@ -80,10 +84,14 @@ bool Screen::Initialize(int width, int height, int posX, int posY, std::string c
 				Utility::DisplayOpenGLVersion(majorVer, minorVer);
 			}
 
-			
+			else
+			{
+				Utility::Log("OpenGL context could not be created properly! The context is either invalid or not supported by your graphics card! Please try on Another PC!", Utility::Severity::Warning);
+				Utility::Log("Displaying Graphics Information...", Utility::Severity::Warning);
+				Utility::DisplayGraphicsProfile();
+				return false;
+			}
 		}
-
-		while (!context);
 	}
 
 	if (!gladLoaderLoadGL())

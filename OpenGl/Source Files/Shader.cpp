@@ -85,16 +85,14 @@ bool Shader::LinkProgram()
 		GLchar error[1000];
 		GLsizei bufferSize = 1000;
 
-		glGetShaderInfoLog(programID, bufferSize, &bufferSize, error);
+		glGetProgramInfoLog(programID, bufferSize, &bufferSize, error);
 
 		Utility::Log("Error! Program did not link successfully! Error information down below: ", Utility::Severity::Failure);
 		Utility::Log(error, Utility::Severity::Failure);
+		return false;
 	}
 
-	else
-	{
-		Utility::Log("Program Linked Successfully!", Utility::Severity::Success);
-	}
+	Utility::Log("Program Linked Successfully!", Utility::Severity::Success);
 
 	return true;
 }
@@ -137,12 +135,7 @@ bool Shader::CompileShaders(const std::string& filename)
 
 	glGetShaderiv(shaderID, GL_COMPILE_STATUS, &compileResult);
 
-	if (compileResult == GL_TRUE)
-	{
-		Utility::Log("Shader compiled successfully!", Utility::Severity::Success);
-	}
-
-	else
+	if (compileResult == GL_FALSE)
 	{
 		GLchar error[1000];
 		GLsizei bufferSize = 1000;
@@ -152,7 +145,11 @@ bool Shader::CompileShaders(const std::string& filename)
 		Utility::Log("Error! Shader did not compile successfully! Error information down below: ", Utility::Severity::Failure);
 
 		Utility::Log(error, Utility::Severity::Failure);
+		return false;
 	}
 
+	Utility::Log("Shader compiled successfully!", Utility::Severity::Success);
+
+	return true;
 }
 

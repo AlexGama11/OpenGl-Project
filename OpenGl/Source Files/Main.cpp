@@ -2,6 +2,10 @@
 #include "Header Files/Screen.h"
 #include "Header Files/Input.h"
 #include "Header Files/Shader.h"
+// task Make a new object in the new way, and make some shaders.
+// bug We got a bug here.
+// warning Something's wrong!
+// removed Removed old code!
 //#include "Objects.h"
 
 Shader shader;

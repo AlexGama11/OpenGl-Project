@@ -42,7 +42,7 @@ bool Screen::Initialize(int width, int height, int posX, int posY, std::string c
 		return false;
 	}
 
-	icon = IMG_Load("../Assets/Icon/ShirouIcon.png");
+	icon = IMG_Load("../Assets/Icon/Shirou.png");
 
 	SDL_SetWindowIcon(window, icon);
 

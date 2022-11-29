@@ -10,9 +10,16 @@ class Objects
 
 public:
 
+	void InitializeVBO();
+
+	void SendData(auto vertexAttributeID, auto colourAttributeID);
+
 	void Draw();
+
+	void Shutdown(auto vertexAttributeID, auto colourAttributeID);
 
 private:
 
+	GLuint vbo{};
 };
 

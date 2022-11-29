@@ -2,18 +2,14 @@
 #include "Header Files/Screen.h"
 #include "Header Files/Input.h"
 #include "Header Files/Shader.h"
-// task Make a new object in the new way, and make some shaders.
-// bug We got a bug here.
-// warning Something's wrong!
-// removed Removed old code!
-//#include "Objects.h"
+#include "Header Files/Objects.h"
 
 Shader shader;
 bool isAppRunning{ true };
 
 int main(int argc, char* argv[])
 {
-	//Objects object;
+	Objects object;
 
 	Utility::Initialize();
 
@@ -22,6 +18,12 @@ int main(int argc, char* argv[])
 	Shader::Initialize();
 
 	shader.Create("../OpenGl/Shader Files/Shader.vert", "../OpenGl/Shader Files/Shader.frag");
+	shader.Use();
+
+	object.InitializeVBO();
+
+	auto vertexAttributeID = shader.GetAttributeID("vertexIn");
+	auto colorAttributeID = shader.GetAttributeID("colorIn");
 
 	while (isAppRunning)
 	{
@@ -31,7 +33,7 @@ int main(int argc, char* argv[])
 
 		Screen::Instance()->ClearBuffer();
 
-		//object.Draw();
+		object.Draw();
 
 		Screen::Instance()->SwapBuffer();
 

@@ -20,16 +20,29 @@ int main(int argc, char* argv[])
 	shader.Create("../OpenGl/Shader Files/Shader.vert", "../OpenGl/Shader Files/Shader.frag");
 	shader.Use();
 
-	object.InitializeVBO();
+	GLfloat vertices[] = { -0.5f,  0.5f, 0.0f,
+							0.5f,  0.5f, 0.0f,
+							0.5f, -0.5f, 0.0f,
+						   -0.5f, -0.5f, 0.0f };
+
+	GLfloat colors[] = { 1.0f, 0.0f, 0.0f,
+						 0.0f, 0.0f, 1.0f,
+						 0.0f, 1.0f, 0.0f,
+						 0.0f, 1.0f, 1.0f };
+
+	GLuint indices[] = { 0, 1, 3,
+						 3, 1, 2 };
 
 	auto vertexAttributeID = shader.GetAttributeID("vertexIn");
-	auto colorAttributeID = shader.GetAttributeID("colorIn");
+	auto colourAttributeID = shader.GetAttributeID("colorIn");
+
+	object.CreateBuffers(vertexAttributeID, colourAttributeID, vertices, colors, indices);
 
 	while (isAppRunning)
 	{
 		Input::Instance()->Update();
 
-		Screen::Instance()->ClearColor(37, 41, 138, 255);
+		Screen::Instance()->ClearColor(0, 0, 0, 255);
 
 		Screen::Instance()->ClearBuffer();
 
@@ -42,6 +55,8 @@ int main(int argc, char* argv[])
 			isAppRunning = false;
 		}
 	}
+
+	object.Shutdown(vertexAttributeID, colourAttributeID);
 
 	shader.Destroy();
 

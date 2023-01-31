@@ -10,16 +10,17 @@ class Objects
 
 public:
 
-	void InitializeVBO();
-
-	void SendData(auto vertexAttributeID, auto colourAttributeID);
+	void CreateBuffers(GLuint vertexAttributeID, GLuint colourAttributeID, GLfloat vertices[], GLfloat colours[], GLuint indices[]);
 
 	void Draw();
 
-	void Shutdown(auto vertexAttributeID, auto colourAttributeID);
+	void Shutdown(GLuint vertexAttributeID, GLuint colourAttributeID);
 
 private:
 
-	GLuint vbo{};
+	GLuint VAO{ 0 };
+	GLuint EBO{ 0 };
+	GLuint vertexVBO{ 0 };
+	GLuint colorVBO{ 0 };
 };
 

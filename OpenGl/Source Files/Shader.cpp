@@ -30,6 +30,21 @@ void Shader::Shutdown()
 	glDeleteShader(fragmentShaderID);
 }
 
+GLuint Shader::GetUniformID(const std::string& uniform) const
+{
+	auto ID = glGetUniformLocation(programID, uniform.c_str());
+	assert(ID != -1);
+	return ID;
+}
+
+GLuint Shader::GetAttributeID(const std::string& attribute) const
+{
+	auto ID = glGetAttribLocation(programID, attribute.c_str());
+	assert(ID != -1);
+	return ID;
+}
+
+
 bool Shader::Create(const std::string& vertexShaderFilename, const std::string& fragmentShaderFilename)
 {
 	programID = glCreateProgram();
@@ -55,6 +70,42 @@ bool Shader::Create(const std::string& vertexShaderFilename, const std::string& 
 		return false;
 	}
 
+	return true;
+}
+
+bool Shader::SendData(const std::string& uniform, GLint data)
+{
+	glUniform1i(GetUniformID(uniform), data);
+	return true;
+}
+
+bool Shader::SendData(const std::string& uniform, GLuint data)
+{
+	glUniform1ui(GetUniformID(uniform), data);
+	return true;
+}
+
+bool Shader::SendData(const std::string& uniform, GLfloat data)
+{
+	glUniform1f(GetUniformID(uniform), data);
+	return true;
+}
+
+bool Shader::SendData(const std::string& uniform, GLfloat x, GLfloat y)
+{
+	glUniform2f(GetUniformID(uniform), x, y);
+	return true;
+}
+
+bool Shader::SendData(const std::string& uniform, GLfloat x, GLfloat y, GLfloat z)
+{
+	glUniform3f(GetUniformID(uniform), x, y, z);
+	return true;
+}
+
+bool Shader::SendData(const std::string& uniform, GLfloat x, GLfloat y, GLfloat z, GLfloat w)
+{
+	glUniform4f(GetUniformID(uniform), x, y, z, w);
 	return true;
 }
 

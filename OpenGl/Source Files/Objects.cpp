@@ -1,37 +1,44 @@
 #include "Header Files/Objects.h"
 
-void Objects::InitializeVBO()
+void Objects::CreateBuffers(GLuint vertexAttributeID, GLuint colourAttributeID, GLfloat vertices[], GLfloat colours[], GLuint indices[])
 {
-	GLfloat vboData[] = { -0.5f,  0.5f, 0.0f, 1.0f, 0.0f, 0.0f,
-						   0.5f,  0.5f, 0.0f, 0.0f, 0.0f, 1.0f,
-						  -0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 1.0f,
-						  -0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 1.0f,
-						   0.5f,  0.5f, 0.0f, 0.0f, 0.0f, 1.0f,
-						   0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f };
+	glGenVertexArrays(1, &VAO);
+	glGenBuffers(1, &vertexVBO);
+	glGenBuffers(1, &colorVBO);
+	glGenBuffers(1, &EBO);
 
-	
-	glGenBuffers(1, &vbo);
-	glBindBuffer(GL_ARRAY_BUFFER, vbo);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vboData), vboData, GL_STATIC_DRAW);
-}
+	glBindVertexArray(VAO);
 
-void Objects::SendData(auto vertexAttributeID, auto colourAttributeID)
-{
-	glVertexAttribPointer(vertexAttributeID, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), 0);
-	glVertexAttribPointer(colourAttributeID, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (GLvoid*)(3 * sizeof(GLfloat)));
-
+	glBindBuffer(GL_ARRAY_BUFFER, vertexVBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+	glVertexAttribPointer(vertexAttributeID, 3, GL_FLOAT, GL_FALSE, 0, 0);
 	glEnableVertexAttribArray(vertexAttributeID);
+
+	glBindBuffer(GL_ARRAY_BUFFER, colorVBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(colours), colours, GL_STATIC_DRAW);
+	glVertexAttribPointer(colourAttributeID, 3, GL_FLOAT, GL_FALSE, 0, 0);
 	glEnableVertexAttribArray(colourAttributeID);
+
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+
+	glBindVertexArray(0);
 }
 
 void Objects::Draw()
 {
-	glDrawArrays(GL_TRIANGLES, 0, 6);
+	glBindVertexArray(VAO);
+	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+	glBindVertexArray(0);
 }
 
-void Objects::Shutdown(auto vertexAttributeID, auto colourAttributeID)
+void Objects::Shutdown(GLuint vertexAttributeID, GLuint colourAttributeID)
 {
-	glDeleteBuffers(1, &vbo);
-	glDisableVertexAttribArray(colorAttributeID);
+	glDeleteBuffers(1, &EBO);
+	glDeleteBuffers(1, &colorVBO);
+	glDeleteBuffers(1, &vertexVBO);
+	glDeleteVertexArrays(1, &VAO);
+
+	glDisableVertexAttribArray(colourAttributeID);
 	glDisableVertexAttribArray(vertexAttributeID);
 }

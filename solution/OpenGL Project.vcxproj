@@ -134,6 +134,8 @@
   <ItemGroup>
     <None Include="..\.gitattributes" />
     <None Include="..\.gitignore" />
+    <None Include="..\OpenGL\Shader Files\RGB.frag" />
+    <None Include="..\OpenGL\Shader Files\RGB.vert" />
     <None Include="..\OpenGL\Shader Files\Shader.frag" />
     <None Include="..\OpenGL\Shader Files\Shader.vert" />
     <None Include="..\README.md" />

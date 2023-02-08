@@ -28,6 +28,25 @@ public:
 
 	static void CheckGLError();
 
+	static std::string NumtoStr(int input);
+
+	static std::string NumtoStr(float input);
+
+	static std::string NumtoStr(unsigned input);
+
+	static std::string NumtoStr(double input);
+
+	static std::string NumtoStr(long double input);
+
+	static std::string NumtoStr(long input);
+
+	static std::string NumtoStr(unsigned long input);
+
+	static std::string NumtoStr(long long input);
+
+	static std::string NumtoStr(unsigned long long input);
+
+
 private:
 	
 	static HANDLE consoleHandle;

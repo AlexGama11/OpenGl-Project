@@ -151,13 +151,13 @@ bool Shader::LinkProgram()
 bool Shader::CompileShaders(const std::string& filename)
 {
 
-	std::ifstream file(filename);
+	std::fstream file(filename, std::ios_base::in);
 
-	//file.open(filename);
-
-	if (!file)
+	if (!file.is_open())
 	{
-		Utility::Log("Error opening \"" + (filename)+"\"! File non - existent or unreachable! Make sure to check the spelling or the path!", Utility::Severity::Failure);
+		Utility::Log("Error loading shader file \"" + (filename)+"\"."
+			"Possible causes could be a corrupt or missing file. It could also be "
+			"that the filename and/or path are incorrectly spelt.", Utility::Severity::Failure);
 		return false;
 	}
 
@@ -166,40 +166,42 @@ bool Shader::CompileShaders(const std::string& filename)
 
 	while (!file.eof())
 	{
-		std::getline(file, line);
+		getline(file, line);
 		sourceCode += line + "\n";
 	}
 
-	//file.close();
+	file.close();
 
-	auto shaderID = (filename.find(".vert")) ? vertexShaderID : fragmentShaderID;
+	auto shaderID = 0;
+
+	if (filename.find(".vert") != std::string::npos)
+	{
+		shaderID = vertexShaderID;
+	}
+
+	else
+	{
+		shaderID = fragmentShaderID;
+	}
 
 	const GLchar* finalCode = reinterpret_cast<const GLchar*>(sourceCode.c_str());
-
-	//bind shader code with object
 	glShaderSource(shaderID, 1, &finalCode, nullptr);
-
-	//compile shader code
 	glCompileShader(shaderID);
 
 	GLint compileResult;
-
 	glGetShaderiv(shaderID, GL_COMPILE_STATUS, &compileResult);
 
 	if (compileResult == GL_FALSE)
 	{
 		GLchar error[1000];
 		GLsizei bufferSize = 1000;
-
 		glGetShaderInfoLog(shaderID, bufferSize, &bufferSize, error);
-
-		Utility::Log("Error! Shader did not compile successfully! Error information down below: ", Utility::Severity::Failure);
-
+		Utility::Log("Error compiling '" + filename + "':", Utility::Severity::Failure);
 		Utility::Log(error, Utility::Severity::Failure);
 		return false;
 	}
 
-	Utility::Log("Shader compiled successfully!", Utility::Severity::Success);
+	Utility::Log("'" + filename + "' compiled successfully.", Utility::Severity::Success);
 
 	return true;
 }

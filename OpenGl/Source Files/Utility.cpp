@@ -82,3 +82,57 @@ void Utility::CheckGLError()
 	}
 
 }
+
+std::string Utility::NumtoStr(int input)
+{
+	const std::string output = std::to_string(input);
+	return output;
+}
+
+std::string Utility::NumtoStr(float input)
+{
+	const std::string output = std::to_string(input);
+	return output;
+}
+
+std::string Utility::NumtoStr(unsigned input)
+{
+	const std::string output = std::to_string(input);
+	return output;
+}
+
+std::string Utility::NumtoStr(double input)
+{
+	const std::string output = std::to_string(input);
+	return output;
+}
+
+std::string Utility::NumtoStr(long double input)
+{
+	const std::string output = std::to_string(input);
+	return output;
+}
+
+std::string Utility::NumtoStr(long input)
+{
+	const std::string output = std::to_string(input);
+	return output;
+}
+
+std::string Utility::NumtoStr(unsigned long input)
+{
+	const std::string output = std::to_string(input);
+	return output;
+}
+
+std::string Utility::NumtoStr(long long input)
+{
+	const std::string output = std::to_string(input);
+	return output;;
+}
+
+std::string Utility::NumtoStr(unsigned long long input)
+{
+	const std::string output = std::to_string(input);
+	return output;
+}

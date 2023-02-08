@@ -70,6 +70,12 @@
     <None Include="..\.gitignore">
       <Filter>Docs</Filter>
     </None>
+    <None Include="..\OpenGL\Shader Files\RGB.frag">
+      <Filter>OpenGL\Shader Files</Filter>
+    </None>
+    <None Include="..\OpenGL\Shader Files\RGB.vert">
+      <Filter>OpenGL\Shader Files</Filter>
+    </None>
     <None Include="..\OpenGL\Shader Files\Shader.frag">
       <Filter>OpenGL\Shader Files</Filter>
     </None>

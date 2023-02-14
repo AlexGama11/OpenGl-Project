@@ -1,7 +1,7 @@
 #pragma once
 #include <assert.h>
 #include <fstream>
-#include "Utility.h"
+#include "Header Files/Core/Utility.h"
 
 class Shader
 {

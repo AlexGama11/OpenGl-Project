@@ -10,56 +10,86 @@
     <Filter Include="OpenGL\Header Files">
       <UniqueIdentifier>{153CA4C9-819D-81D7-0A0B-C889766BB896}</UniqueIdentifier>
     </Filter>
+    <Filter Include="OpenGL\Header Files\Components">
+      <UniqueIdentifier>{0A4A2A66-F66F-F4CC-DFB5-7998CB7A1999}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenGL\Header Files\Core">
+      <UniqueIdentifier>{8D351F9A-795A-6E1A-A2A5-53AA8E296D38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenGL\Header Files\Managers">
+      <UniqueIdentifier>{92652956-7E20-1902-27D8-914C13726392}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenGL\Header Files\Objects">
+      <UniqueIdentifier>{CE1FF5F3-3A2D-23DA-C313-1FC52F20EF90}</UniqueIdentifier>
+    </Filter>
     <Filter Include="OpenGL\Shader Files">
       <UniqueIdentifier>{035F2F74-6FC0-0C82-F82D-5334648E4341}</UniqueIdentifier>
     </Filter>
     <Filter Include="OpenGL\Source Files">
       <UniqueIdentifier>{DD182108-497A-FE15-D2E7-44C83E4835D5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="OpenGL\Source Files\Components">
+      <UniqueIdentifier>{D2998681-BEBF-50E8-A705-D6B393CA75B4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenGL\Source Files\Core">
+      <UniqueIdentifier>{554F8D47-4174-DCC7-6ABF-C1575643DBE5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenGL\Source Files\Managers">
+      <UniqueIdentifier>{5A231FDD-46DE-0E89-EF95-87D3DB2F5919}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenGL\Source Files\Objects">
+      <UniqueIdentifier>{9644C6E0-0252-F4C6-8B38-F0B1F744C07D}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\OpenGL\Header Files\Input.h">
-      <Filter>OpenGL\Header Files</Filter>
+    <ClInclude Include="..\OpenGL\Header Files\Components\Buffer.h">
+      <Filter>OpenGL\Header Files\Components</Filter>
     </ClInclude>
-    <ClInclude Include="..\OpenGL\Header Files\Objects.h">
-      <Filter>OpenGL\Header Files</Filter>
+    <ClInclude Include="..\OpenGL\Header Files\Core\Utility.h">
+      <Filter>OpenGL\Header Files\Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\OpenGL\Header Files\Screen.h">
-      <Filter>OpenGL\Header Files</Filter>
+    <ClInclude Include="..\OpenGL\Header Files\Core\gl.h">
+      <Filter>OpenGL\Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\OpenGL\Header Files\Core\khrplatform.h">
+      <Filter>OpenGL\Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\OpenGL\Header Files\Managers\Input.h">
+      <Filter>OpenGL\Header Files\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\OpenGL\Header Files\Managers\Screen.h">
+      <Filter>OpenGL\Header Files\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\OpenGL\Header Files\Objects\Quad.h">
+      <Filter>OpenGL\Header Files\Objects</Filter>
     </ClInclude>
     <ClInclude Include="..\OpenGL\Header Files\Shader.h">
       <Filter>OpenGL\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\OpenGL\Header Files\Utility.h">
-      <Filter>OpenGL\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\OpenGL\Header Files\gl.h">
-      <Filter>OpenGL\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\OpenGL\Header Files\khrplatform.h">
-      <Filter>OpenGL\Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\OpenGL\Source Files\Input.cpp">
-      <Filter>OpenGL\Source Files</Filter>
+    <ClCompile Include="..\OpenGL\Source Files\Components\Buffer.cpp">
+      <Filter>OpenGL\Source Files\Components</Filter>
     </ClCompile>
-    <ClCompile Include="..\OpenGL\Source Files\Main.cpp">
-      <Filter>OpenGL\Source Files</Filter>
+    <ClCompile Include="..\OpenGL\Source Files\Core\Main.cpp">
+      <Filter>OpenGL\Source Files\Core</Filter>
     </ClCompile>
-    <ClCompile Include="..\OpenGL\Source Files\Objects.cpp">
-      <Filter>OpenGL\Source Files</Filter>
+    <ClCompile Include="..\OpenGL\Source Files\Core\Utility.cpp">
+      <Filter>OpenGL\Source Files\Core</Filter>
     </ClCompile>
-    <ClCompile Include="..\OpenGL\Source Files\Screen.cpp">
-      <Filter>OpenGL\Source Files</Filter>
+    <ClCompile Include="..\OpenGL\Source Files\Core\gl.c">
+      <Filter>OpenGL\Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\OpenGL\Source Files\Managers\Input.cpp">
+      <Filter>OpenGL\Source Files\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\OpenGL\Source Files\Managers\Screen.cpp">
+      <Filter>OpenGL\Source Files\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\OpenGL\Source Files\Objects\Quad.cpp">
+      <Filter>OpenGL\Source Files\Objects</Filter>
     </ClCompile>
     <ClCompile Include="..\OpenGL\Source Files\Shader.cpp">
-      <Filter>OpenGL\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\OpenGL\Source Files\Utility.cpp">
-      <Filter>OpenGL\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\OpenGL\Source Files\gl.c">
       <Filter>OpenGL\Source Files</Filter>
     </ClCompile>
   </ItemGroup>

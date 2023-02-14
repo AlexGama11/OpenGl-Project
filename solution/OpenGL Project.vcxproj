@@ -114,22 +114,24 @@
     </BuildLog>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\OpenGL\Header Files\Input.h" />
-    <ClInclude Include="..\OpenGL\Header Files\Objects.h" />
-    <ClInclude Include="..\OpenGL\Header Files\Screen.h" />
+    <ClInclude Include="..\OpenGL\Header Files\Components\Buffer.h" />
+    <ClInclude Include="..\OpenGL\Header Files\Core\Utility.h" />
+    <ClInclude Include="..\OpenGL\Header Files\Core\gl.h" />
+    <ClInclude Include="..\OpenGL\Header Files\Core\khrplatform.h" />
+    <ClInclude Include="..\OpenGL\Header Files\Managers\Input.h" />
+    <ClInclude Include="..\OpenGL\Header Files\Managers\Screen.h" />
+    <ClInclude Include="..\OpenGL\Header Files\Objects\Quad.h" />
     <ClInclude Include="..\OpenGL\Header Files\Shader.h" />
-    <ClInclude Include="..\OpenGL\Header Files\Utility.h" />
-    <ClInclude Include="..\OpenGL\Header Files\gl.h" />
-    <ClInclude Include="..\OpenGL\Header Files\khrplatform.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\OpenGL\Source Files\Input.cpp" />
-    <ClCompile Include="..\OpenGL\Source Files\Main.cpp" />
-    <ClCompile Include="..\OpenGL\Source Files\Objects.cpp" />
-    <ClCompile Include="..\OpenGL\Source Files\Screen.cpp" />
+    <ClCompile Include="..\OpenGL\Source Files\Components\Buffer.cpp" />
+    <ClCompile Include="..\OpenGL\Source Files\Core\Main.cpp" />
+    <ClCompile Include="..\OpenGL\Source Files\Core\Utility.cpp" />
+    <ClCompile Include="..\OpenGL\Source Files\Core\gl.c" />
+    <ClCompile Include="..\OpenGL\Source Files\Managers\Input.cpp" />
+    <ClCompile Include="..\OpenGL\Source Files\Managers\Screen.cpp" />
+    <ClCompile Include="..\OpenGL\Source Files\Objects\Quad.cpp" />
     <ClCompile Include="..\OpenGL\Source Files\Shader.cpp" />
-    <ClCompile Include="..\OpenGL\Source Files\Utility.cpp" />
-    <ClCompile Include="..\OpenGL\Source Files\gl.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.gitattributes" />

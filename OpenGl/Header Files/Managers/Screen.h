@@ -6,9 +6,7 @@
 
 class Screen
 {
-
 public:
-
 	static Screen* Instance();
 
 	/**
@@ -21,7 +19,7 @@ public:
 	void SwapBuffer();
 
 	void ClearBuffer();
-	
+
 	void ClearColor(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha);
 
 	void Shutdown();
@@ -29,15 +27,16 @@ public:
 	int VersionDecrement(int& Version);
 
 private:
-
-	Screen() {};
+	Screen()
+	{
+	};
 	Screen(const Screen&);
-	Screen& operator = (const Screen&);
+	Screen& operator =(const Screen&);
 
 
-	SDL_Window* window{ nullptr };
-	SDL_Surface* icon{ nullptr };
-	SDL_GLContext context{ nullptr };
+	SDL_Window* window{nullptr};
+	SDL_Surface* icon{nullptr};
+	SDL_GLContext context{nullptr};
 
 	std::string majorContext;
 	std::string minorContext;
@@ -45,6 +44,5 @@ private:
 	int majorVer;
 	int minorVer;
 
-	bool minorVersionLoop{ true };
-
+	bool minorVersionLoop{true};
 };

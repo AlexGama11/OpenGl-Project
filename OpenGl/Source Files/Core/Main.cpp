@@ -5,11 +5,10 @@
 #include "Header Files/Components/Buffer.h"
 
 Shader shader;
-bool isAppRunning{ true };
+bool isAppRunning{true};
 
 int main(int argc, char* argv[])
 {
-
 	Utility::Initialize();
 
 	Screen::Instance()->Initialize(1280, 720, 320, 180, "4.6", true);
@@ -21,18 +20,22 @@ int main(int argc, char* argv[])
 
 	Buffer buffer(6, true);
 
-	GLfloat vertices[] = { -0.5f,  0.5f, 0.0f,
-							0.5f,  0.5f, 0.0f,
-							0.5f, -0.5f, 0.0f,
-						   -0.5f, -0.5f, 0.0f };
+	GLfloat vertices[] = {
+		-0.5f, 0.5f, 0.0f,
+		0.5f, 0.5f, 0.0f,
+		0.5f, -0.5f, 0.0f,
+		-0.5f, -0.5f, 0.0f
+	};
 
 	/*GLfloat colors[] = { 1.0f, 0.7f, 0.3f,
 						 0.4f, 0.8f, 1.0f,
 						 0.9f, 1.0f, 0.2f,
 						 0.1f, 1.0f, 1.0f };*/
 
-	GLuint indices[] = { 0, 1, 3,
-						 3, 1, 2 };
+	GLuint indices[] = {
+		0, 1, 3,
+		3, 1, 2
+	};
 
 	auto vertexAttributeID = shader.GetAttributeID("position");
 	auto timeUniformID = shader.GetUniformID("time");
@@ -41,7 +44,8 @@ int main(int argc, char* argv[])
 	buffer.FillVBO(Buffer::VBO::VertexBuffer, vertices, sizeof(vertices));
 	buffer.FillEBO(indices, sizeof(indices));
 	buffer.LinkEBO();
-	buffer.LinkVBO(vertexAttributeID, Buffer::VBO::VertexBuffer, Buffer::ComponentSize::XYZ, Buffer::DataType::FloatData);
+	buffer.LinkVBO(vertexAttributeID, Buffer::VBO::VertexBuffer, Buffer::ComponentSize::XYZ,
+	               Buffer::DataType::FloatData);
 
 	while (isAppRunning)
 	{

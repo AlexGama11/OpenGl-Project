@@ -2,17 +2,16 @@
 
 Screen* Screen::Instance()
 {
-	static Screen* screen = new Screen;
+	static auto screen = new Screen;
 	return screen;
 }
 
 bool Screen::Initialize(int width, int height, int posX, int posY, std::string contextVersions, bool isCore)
 {
-
 	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS) == -1)
 	{
 		Utility::Log("SDL did not initialize properly.", Utility::Severity::Failure);
-		return 0;
+		return false;
 	}
 
 	majorContext = contextVersions.substr(0, 1);
@@ -48,13 +47,15 @@ bool Screen::Initialize(int width, int height, int posX, int posY, std::string c
 
 	context = SDL_GL_CreateContext(window);
 	Utility::DisplayOpenGLVersion(majorVer, minorVer);
-	
+
 
 	if (!context)
 	{
 		while (!context)
 		{
-			Utility::Log("OpenGL context could not be created properly. The context is either invalid or not supported by your graphics card!", Utility::Severity::Warning);
+			Utility::Log(
+				"OpenGL context could not be created properly. The context is either invalid or not supported by your graphics card!",
+				Utility::Severity::Warning);
 			Utility::Log("Trying one minor version down!", Utility::Severity::Warning);
 
 			VersionDecrement(minorVer);
@@ -86,7 +87,9 @@ bool Screen::Initialize(int width, int height, int posX, int posY, std::string c
 
 			else
 			{
-				Utility::Log("OpenGL context could not be created properly! The context is either invalid or not supported by your graphics card! Please try on Another PC!", Utility::Severity::Warning);
+				Utility::Log(
+					"OpenGL context could not be created properly! The context is either invalid or not supported by your graphics card! Please try on Another PC!",
+					Utility::Severity::Warning);
 				Utility::Log("Displaying Graphics Information...", Utility::Severity::Warning);
 				Utility::DisplayGraphicsProfile();
 				return false;
@@ -100,23 +103,20 @@ bool Screen::Initialize(int width, int height, int posX, int posY, std::string c
 		return false;
 	}
 
-	Utility::Log("Screen Initialized Successfully! Displaying Graphics Card Information...", Utility::Severity::Success);
+	Utility::Log("Screen Initialized Successfully! Displaying Graphics Card Information...",
+	             Utility::Severity::Success);
 	Utility::DisplayGraphicsProfile();
 	return true;
 }
 
 void Screen::SwapBuffer()
 {
-
 	SDL_GL_SwapWindow(window);
-
 }
 
 void Screen::ClearBuffer()
 {
-
 	glClear(GL_COLOR_BUFFER_BIT);
-
 }
 
 void Screen::ClearColor(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha)

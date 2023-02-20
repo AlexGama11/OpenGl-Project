@@ -9,7 +9,9 @@ bool Shader::Initialize()
 
 	if (vertexShaderID == 0)
 	{
-		Utility::Log("Error! Vertex Shader could not be created! This could be because of your Graphics Card not supporting modern OpenGL!", Utility::Severity::Failure);
+		Utility::Log(
+			"Error! Vertex Shader could not be created! This could be because of your Graphics Card not supporting modern OpenGL!",
+			Utility::Severity::Failure);
 		return false;
 	}
 
@@ -17,7 +19,9 @@ bool Shader::Initialize()
 
 	if (fragmentShaderID == 0)
 	{
-		Utility::Log("Error! Fragment Shader could not be created! This could be because of your Graphics Card not supporting modern OpenGL!", Utility::Severity::Failure);
+		Utility::Log(
+			"Error! Fragment Shader could not be created! This could be because of your Graphics Card not supporting modern OpenGL!",
+			Utility::Severity::Failure);
 		return false;
 	}
 
@@ -51,7 +55,9 @@ bool Shader::Create(const std::string& vertexShaderFilename, const std::string& 
 
 	if (programID == 0)
 	{
-		Utility::Log("Error! Shader Program could not be created! This could be because of your Graphics Card not supporting modern OpenGL!", Utility::Severity::Failure);
+		Utility::Log(
+			"Error! Shader Program could not be created! This could be because of your Graphics Card not supporting modern OpenGL!",
+			Utility::Severity::Failure);
 		return false;
 	}
 
@@ -138,7 +144,8 @@ bool Shader::LinkProgram()
 
 		glGetProgramInfoLog(programID, bufferSize, &bufferSize, error);
 
-		Utility::Log("Error! Program did not link successfully! Error information down below: ", Utility::Severity::Failure);
+		Utility::Log("Error! Program did not link successfully! Error information down below: ",
+		             Utility::Severity::Failure);
 		Utility::Log(error, Utility::Severity::Failure);
 		return false;
 	}
@@ -150,14 +157,13 @@ bool Shader::LinkProgram()
 
 bool Shader::CompileShaders(const std::string& filename)
 {
-
 	std::fstream file(filename, std::ios_base::in);
 
 	if (!file.is_open())
 	{
-		Utility::Log("Error loading shader file \"" + (filename)+"\"."
-			"Possible causes could be a corrupt or missing file. It could also be "
-			"that the filename and/or path are incorrectly spelt.", Utility::Severity::Failure);
+		Utility::Log("Error loading shader file \"" + (filename) + "\"."
+		             "Possible causes could be a corrupt or missing file. It could also be "
+		             "that the filename and/or path are incorrectly spelt.", Utility::Severity::Failure);
 		return false;
 	}
 
@@ -184,7 +190,7 @@ bool Shader::CompileShaders(const std::string& filename)
 		shaderID = fragmentShaderID;
 	}
 
-	const GLchar* finalCode = reinterpret_cast<const GLchar*>(sourceCode.c_str());
+	auto finalCode = sourceCode.c_str();
 	glShaderSource(shaderID, 1, &finalCode, nullptr);
 	glCompileShader(shaderID);
 
@@ -205,4 +211,3 @@ bool Shader::CompileShaders(const std::string& filename)
 
 	return true;
 }
-

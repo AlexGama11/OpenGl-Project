@@ -1,6 +1,6 @@
 #include "Header Files/Core/Utility.h"
 
-HANDLE Utility::consoleHandle{ nullptr };
+HANDLE Utility::consoleHandle{nullptr};
 
 void Utility::Initialize()
 {
@@ -37,50 +37,53 @@ void Utility::DisplayOpenGLVersion(int majorVers, int minorVers, Severity severi
 
 void Utility::CheckGLError()
 {
-
 	//check if an error occurred and store its value
 	GLenum errorValue = glGetError();
 
 	if (errorValue == GL_NO_ERROR)
 	{
-		Log("Old function fixed code is working! No error has been detected!", Utility::Severity::Success);
+		Log("Old function fixed code is working! No error has been detected!", Severity::Success);
 	}
 
 	else if (errorValue == GL_INVALID_ENUM)
 	{
-		Log("Old function fixed code isn't working! An invalid enum has been detected! The code was ignored!", Utility::Severity::Failure);
+		Log("Old function fixed code isn't working! An invalid enum has been detected! The code was ignored!",
+		    Severity::Failure);
 	}
 
 	else if (errorValue == GL_INVALID_VALUE)
 	{
-		Log("Old function fixed code isn't working! An invalid number has been detected because it's out of range! The code was ignored!", Utility::Severity::Failure);
+		Log(
+			"Old function fixed code isn't working! An invalid number has been detected because it's out of range! The code was ignored!",
+			Severity::Failure);
 	}
 
 	else if (errorValue == GL_INVALID_OPERATION)
 	{
-		Log("Old function fixed code isn't working! An invalid operation has been detected! The code was ignored!", Utility::Severity::Failure);
+		Log("Old function fixed code isn't working! An invalid operation has been detected! The code was ignored!",
+		    Severity::Failure);
 	}
 
 	else if (errorValue == GL_INVALID_FRAMEBUFFER_OPERATION)
 	{
-		Log("Old function fixed code isn't working! The framebuffer object is not complete! The code was ignored!", Utility::Severity::Failure);
+		Log("Old function fixed code isn't working! The framebuffer object is not complete! The code was ignored!",
+		    Severity::Failure);
 	}
 
 	else if (errorValue == GL_OUT_OF_MEMORY)
 	{
-		Log("Old function fixed code isn't working! There is nor enough memory left to run it!", Utility::Severity::Failure);
+		Log("Old function fixed code isn't working! There is nor enough memory left to run it!", Severity::Failure);
 	}
 
 	else if (errorValue == GL_STACK_UNDERFLOW)
 	{
-		Log("Old function fixed code isn't working, and has caused the stack to underflow!", Utility::Severity::Failure);
+		Log("Old function fixed code isn't working, and has caused the stack to underflow!", Severity::Failure);
 	}
 
 	else if (errorValue == GL_STACK_OVERFLOW)
 	{
-		Log("Old function fixed code isn't working, and has caused the stack to overflow!", Utility::Severity::Failure);
+		Log("Old function fixed code isn't working, and has caused the stack to overflow!", Severity::Failure);
 	}
-
 }
 
 std::string Utility::NumtoStr(int input)
@@ -128,7 +131,7 @@ std::string Utility::NumtoStr(unsigned long input)
 std::string Utility::NumtoStr(long long input)
 {
 	const std::string output = std::to_string(input);
-	return output;;
+	return output;
 }
 
 std::string Utility::NumtoStr(unsigned long long input)

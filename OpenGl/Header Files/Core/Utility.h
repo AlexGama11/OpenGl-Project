@@ -7,9 +7,7 @@
 
 class Utility
 {
-
 public:
-
 	enum class Severity
 	{
 		Default = 5,
@@ -46,8 +44,6 @@ public:
 
 	static std::string NumtoStr(unsigned long long input);
 
-
 private:
-	
 	static HANDLE consoleHandle;
 };

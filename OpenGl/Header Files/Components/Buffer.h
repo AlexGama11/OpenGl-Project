@@ -9,9 +9,7 @@
 
 class Buffer
 {
-
 public:
-
 	enum class Fill
 	{
 		Once = GL_STATIC_DRAW,
@@ -65,7 +63,7 @@ public:
 	void FillEBO(const GLuint* data, GLsizeiptr bufferSize, Fill fill = Fill::Once) const;
 
 	void LinkEBO() const;
-	
+
 	void LinkVBO(GLint attributeID, VBO vbo, ComponentSize componentSize, DataType dataType) const;
 
 	void SetTime(GLuint timeUniformID);
@@ -73,12 +71,10 @@ public:
 	void Render(RenderMode renderMode) const;
 
 private:
+	GLuint VAO{0};
+	GLuint EBO{0};
+	std::array<GLuint, 4> VBOs{0, 0, 0, 0};
 
-	GLuint VAO{ 0 };
-	GLuint EBO{ 0 };
-	std::array<GLuint, 4> VBOs{ 0, 0, 0, 0 };
-
-	bool hasEBO{ false };
-	GLsizei totalVertices{ 0 };
+	bool hasEBO{false};
+	GLsizei totalVertices{0};
 };
-

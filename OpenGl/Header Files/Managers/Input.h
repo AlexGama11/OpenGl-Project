@@ -5,9 +5,7 @@
 
 class Input
 {
-
 public:
-
 	static Input* Instance();
 
 	void Update();
@@ -22,33 +20,31 @@ public:
 	bool GetQuit();
 
 private:
-
-	Input() {};
+	Input()
+	{
+	};
 	Input(const Input&);
-	Input& operator = (const Input&);
+	Input& operator =(const Input&);
 
 	struct Vec3
 	{
-		float x{ 0.0f };
-		float y{ 0.0f };
-		float z{ 0.0f };
+		float x{0.0f};
+		float y{0.0f};
+		float z{0.0f};
 	};
 
 	struct Size
 	{
-		float increment{ 0.0f };
+		float increment{0.0f};
 	};
 
 	Size mouseWheel;
-	
+
 	Vec3 mouseMotion;
 	Vec3 mousePosition;
 
 	char key;
 
-	bool quit{ false };
+	bool quit{false};
 	//auto mouseButton;
-
-
 };
-

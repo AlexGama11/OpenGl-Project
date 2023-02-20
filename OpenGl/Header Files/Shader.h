@@ -6,7 +6,6 @@
 class Shader
 {
 public:
-
 	static bool Initialize();
 
 	static void Shutdown();
@@ -27,15 +26,13 @@ public:
 	void Use() const;
 	void Destroy() const;
 
-
 private:
-
 	static GLint vertexShaderID;
 	static GLint fragmentShaderID;
 
-	GLuint programID{ 0 };
+	GLuint programID{0};
 
 	bool LinkProgram();
-	
+
 	bool CompileShaders(const std::string& filename);
 };

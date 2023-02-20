@@ -1,6 +1,6 @@
 #include "Header Files/Components/Buffer.h"
 
-Buffer::Buffer(GLsizei totalVertices, bool hasEBO) : totalVertices(totalVertices), hasEBO(hasEBO)
+Buffer::Buffer(GLsizei totalVertices, bool hasEBO) : hasEBO(hasEBO), totalVertices(totalVertices)
 {
 	glGenVertexArrays(1, &VAO);
 	glGenBuffers(4, VBOs.data());
@@ -20,7 +20,6 @@ Buffer::~Buffer()
 
 	glDeleteBuffers(4, VBOs.data());
 	glDeleteVertexArrays(1, &VAO);
-	
 }
 
 void Buffer::FillVBO(VBO vbo, const void* data, GLsizeiptr bufferSize, Fill fill) const
@@ -47,7 +46,8 @@ void Buffer::LinkVBO(GLint attributeID, VBO vbo, ComponentSize componentSize, Da
 	glBindVertexArray(VAO);
 	glBindBuffer(GL_ARRAY_BUFFER, VBOs[static_cast<int>(vbo)]);
 
-	glVertexAttribPointer(attributeID, static_cast<GLint>(componentSize), static_cast<GLenum>(dataType), GL_FALSE, 0, NULL);
+	glVertexAttribPointer(attributeID, static_cast<GLint>(componentSize), static_cast<GLenum>(dataType), GL_FALSE, 0,
+	                      nullptr);
 
 	glEnableVertexAttribArray(attributeID);
 	glBindVertexArray(0);
@@ -69,12 +69,12 @@ void Buffer::SetTime(GLuint timeUniformID)
 
 void Buffer::Render(RenderMode renderMode) const
 {
-
 	glBindVertexArray(VAO);
 
 	if (hasEBO)
 	{
-		glDrawElements(static_cast<GLenum>(renderMode), totalVertices, GL_UNSIGNED_INT, (const void*)(nullptr));
+		glDrawElements(static_cast<GLenum>(renderMode), totalVertices, GL_UNSIGNED_INT,
+		               static_cast<const void*>(nullptr));
 	}
 
 	else
